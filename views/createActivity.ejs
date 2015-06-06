@@ -1,10 +1,31 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <title>Todo</title>
+    <title>Create Activity</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
+    <script type="text/javascript" src="/scripts/tinymce/tinymce.min.js"></script>
+    <script type="text/javascript">
+      tinymce.init({
+        selector: "textarea"
+      });
+      console.log(new Date());
+    </script>
   </head>
   <body>
     <h1><%= title %></h1>
+    <h2><%= time %></h2>
+    <form action="/activities" method="POST">
+      <label>title</label>
+      <input type="text" name="title" />
+      <label>tags</label>
+      <input type="text" name="tags" />
+      <label>location</label>
+      <input type="text" name="location" />
+      <label>date</label>
+      <input type="date" name="eventDate" />
+      <label>content</label>
+      <textarea name="content"></textarea>
+      <input type="submit" value="Create" />
+    </form>
   </body>
 </html>
