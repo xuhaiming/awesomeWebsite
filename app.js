@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 var todos = require('./routes/todos');
 var activities = require('./routes/activities')
 var cloud = require('./cloud');
+var _ = require('underscore');
 
 var app = express();
 
@@ -21,7 +22,22 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.get('/', function(req, res) {
-  res.render('index', { currentTime: new Date() })
+  var AV = require('leanengine');
+  var Activity = AV.Object.extend('Activity');
+  var query = new AV.Query(Activity);
+  query.descending('createdAt');
+  query.find({
+    success: function(results) {
+      var currentActivity = _.find(results, function(act) {return act.id == req.param('activityId')});
+      res.render('index', {
+        activities: results,
+        currentActivity: currentActivity
+      });
+    },
+    error: function(err) {
+      next(err);
+    }
+  });
 })
 
 // 可以将一类的路由单独保存在一个文件中

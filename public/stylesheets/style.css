@@ -6,7 +6,25 @@ a {
   color: #00b7ff;
 }
 
+#headerTitle {
+  float: left;
+}
+
+#createActivityButton {
+  margin-top: 25px;
+  float: right;
+}
 #container {
+  max-width: 1024px;
+  min-width: 720px;
+  margin: auto;
+}
+
+#previewContainer {
+  margin-top: 35px;
+}
+
+#containerActivity {
   max-width: 768px;
   min-width: 480px;
   margin: auto;

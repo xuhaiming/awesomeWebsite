@@ -31,7 +31,7 @@ router.post('/', function(req, res, next) {
     activity.set('tags', req.body.tags);
     activity.save(null, {
         success: function(activity) {
-            res.redirect('/activities');
+            res.redirect('/');
         },
         error: function(err) {
             err += testDate;
