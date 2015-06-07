@@ -8,8 +8,7 @@
 首先确认本机已经安装 [Node.js](http://nodejs.org/) 运行环境。然后执行下列指令：
 
 ```
-$ git clone git@github.com:leancloud/node-js-getting-started.git
-$ cd node-js-getting-started
+$ git clone https://github.com/xuhaiming/awesomeWebsite.git
 ```
 
 准备启动文件:
