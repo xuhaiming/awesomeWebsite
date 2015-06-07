@@ -5,3 +5,17 @@ body {
 a {
   color: #00b7ff;
 }
+
+#container {
+  max-width: 768px;
+  min-width: 480px;
+  margin: auto;
+}
+
+#activityForm{
+  margin-top: 15px;
+}
+
+.activitySubmitBtn {
+  margin-top: 15px;
+}
