@@ -29,6 +29,7 @@ router.post('/', function(req, res, next) {
     activity.set('content', req.body.content);
     activity.set('location', req.body.location);
     activity.set('tags', req.body.tags);
+    activity.set('imageUrl', req.body.imageUrl);
     activity.save(null, {
         success: function(activity) {
             res.redirect('/');
